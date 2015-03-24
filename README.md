@@ -18,6 +18,7 @@ Should we have enough time we will discuss AES CBC padding oracle.
 
 
 ####Running at home:
-Unfortunately if you want to run it on your machine you have only 2 options:
+Unfortunately if you want to run it on your machine you have only 3 options:
    1. Use xinetd as I did - Linux required
    2. Rewrite challenges to use networking - Python networking required
+   3. Devise something else
