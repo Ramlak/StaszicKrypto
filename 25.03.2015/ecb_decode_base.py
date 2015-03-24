@@ -18,10 +18,9 @@ def chunks(array, chunk_size=16):
 
 class Connection(object):
 	
-	newline = "\n"
-
-	def __init__(self, host, port):
+	def __init__(self, host, port, newline="\n"):
 		self.socket = create_connection([host, port])
+		self.newline = newline
 
 	def recv(self, num=1024):
 		return self.socket.recv(num)
@@ -32,11 +31,8 @@ class Connection(object):
 			result += self.recv(1)
 		return result
 
-	def recvline(self, delim=None):
-		eol = self.newline
-		if delim:
-			eol = delim
-		return self.recvuntil(eol)
+	def recvline(self):
+		return self.recvuntil(self.newline)
 
 	def send(self, string):
 		self.socket.sendall(string)

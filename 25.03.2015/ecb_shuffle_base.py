@@ -16,12 +16,26 @@ def chunks(array, chunk_size=16):
 		result.append(array[i:i+chunk_size])
 	return result
 
+def pad(string):
+	add = (len(string)/16 + 1)*16 - len(string)
+	result = string + chr(add) * add
+	return result
+
+def unpad(string):
+	result = string
+	padding_chr = string[-1]
+	for i in xrange(ord(padding_chr)):
+		if string[-1 - i] == padding_chr:
+			result = result[:-1]
+		else:
+			return string
+	return result
+
 class Connection(object):
 	
-	newline = "\n"
-
-	def __init__(self, host, port):
+	def __init__(self, host, port, newline="\n"):
 		self.socket = create_connection([host, port])
+		self.newline = newline
 
 	def recv(self, num=1024):
 		return self.socket.recv(num)
@@ -32,11 +46,8 @@ class Connection(object):
 			result += self.recv(1)
 		return result
 
-	def recvline(self, delim=None):
-		eol = self.newline
-		if delim:
-			eol = delim
-		return self.recvuntil(eol)
+	def recvline(self):
+		return self.recvuntil(self.newline)
 
 	def send(self, string):
 		self.socket.sendall(string)
@@ -58,11 +69,6 @@ class Connection(object):
 		t.interact()
 
 c = Connection("localhost", 9999)
-
-def pad(string):
-	add = (len(string)/16 + 1)*16 - len(string)
-	result = string + "\x00" * add
-	return result
 
 user = "marcin"
 password = "kalinowski"

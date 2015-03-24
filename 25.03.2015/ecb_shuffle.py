@@ -25,13 +25,17 @@ def unhex(string):
 
 def pad(string):
 	add = (len(string)/16 + 1)*16 - len(string)
-	result = string + "\x00" * add
+	result = string + chr(add) * add
 	return result
 
 def unpad(string):
 	result = string
-	while result.endswith("\x00"):
-		result = result[:-1]
+	padding_chr = string[-1]
+	for i in xrange(ord(padding_chr)):
+		if string[-1 - i] == padding_chr:
+			result = result[:-1]
+		else:
+			return string
 	return result
 
 cipher = AES.new(key, AES.MODE_ECB)
