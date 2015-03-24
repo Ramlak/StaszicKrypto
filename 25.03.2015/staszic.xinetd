@@ -1,0 +1,25 @@
+service ecb_shuffle
+{
+    disable = no
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = malware
+    bind        = 0.0.0.0
+    server      = /home/malware/ecb_shuffle/server.py
+    type        = UNLISTED
+    port        = 9999
+}
+
+service ecb_decode
+{
+    disable = no
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = malware
+    bind        = 0.0.0.0
+    server      = /home/malware/ecb_decode/server.py
+    type        = UNLISTED
+    port        = 8888
+}
