@@ -2,7 +2,7 @@
 
 from socket import create_connection
 from Crypto.Cipher import AES
-import json, re, telnetlib
+import telnetlib, string, sys
 
 def enhex(string):
 	return string.encode('hex')
@@ -57,24 +57,14 @@ class Connection(object):
 		t.sock = self.socket
 		t.interact()
 
-c = Connection("localhost", 9999)
 
-def pad(string):
-	add = (len(string)/16 + 1)*16 - len(string)
-	result = string + "\x00" * add
-	return result
+c = Connection("localhost", 8888)
 
-user = "marcin"
-password = "kalinowski"
+charset = string.digits + string.lowercase + string.uppercase + "{}_\x00"
 
-print(user, password)
+def encrypt_string(string):
+	c.sendlineafter("Your string:", string)
+	c.recvuntil("Encrypted strings:")
+	return unhex(c.recvline().strip())
 
-c.sendlineafter("user:", user)
-c.sendlineafter("password:", password)
-
-c.recvuntil("Your session cookie:")
-
-cookie = unhex(c.recvline().strip())
-
-c.sendlineafter("Session cookie:", enhex(cookie))
-c.interactive()
+print encrypt_string("Shit is getting real.")
