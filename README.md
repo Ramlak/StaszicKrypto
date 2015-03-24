@@ -2,7 +2,7 @@ This is a repository for Staszic cryptography course.
 
 ##25.03.2015
 
-We will try to attack AES ECB encryption mode.
+We will try to attack AES ECB encryption mode. <br>
 Should we have enough time we will discuss AES CBC padding oracle.
 
 ####Server-side files:
