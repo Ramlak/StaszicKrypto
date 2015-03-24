@@ -5,7 +5,10 @@ This is a repository for Staszic cryptography Course.
 We will try to attack AES ECB encryption mode.
 Should we have enough time we will discuss AES CBC padding oracle.
 
-###Challenges files:
- 1. [ECB Shuffle](25.03.2015/ecb_shuffle.py)
- 2. [ECB Decode](25.03.2015/ecb_decode.py)
+###Server-side files:
+	1. [ECB Shuffle](25.03.2015/ecb_shuffle.py)
+	2. [ECB Decode](25.03.2015/ecb_decode.py)
 
+###Simple clients:
+	1. [ECB Shuffle Client](25.03.2015/ecb_shuffle_base.py)
+	2. [ECB Decode Client](25.03.2015/ecb_decode_base.py)
