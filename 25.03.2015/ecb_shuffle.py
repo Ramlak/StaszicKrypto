@@ -42,7 +42,9 @@ cipher = AES.new(key, AES.MODE_ECB)
 
 stdout.write(welcome_message)
 stdout.write("Please register.\n")
+
 stdout.write("user:")
+
 credentials = {}
 credentials['user'] = stdin.readline().strip()
 
@@ -52,12 +54,11 @@ if 'admin' in credentials['user']:
 
 stdout.write("password:")
 credentials['password'] = stdin.readline().strip()
-registered = True
+
 to_encrypt = pad(json.dumps(credentials))
 stdout.write("Your session cookie:"+enhex(cipher.encrypt(to_encrypt)) + "\n")
 
 stdout.write("Please login.\n")
-
 stdout.write("Session cookie:")
 
 user_data = unhex(stdin.readline().strip())
