@@ -12,10 +12,10 @@ You will also need [PyCrypto](https://www.dlitz.net/software/pycrypto/) library
 ####Server-side files:
    1. ECB Shuffle
    	- [Original](25.03.2015/ecb_shuffle.py)
-   	- [Standalone](25.03/2015/ecb_shuffle_standalone.py)
+   	- [Standalone](25.03.2015/ecb_shuffle_standalone.py)
    2. ECB Decode
-   	- [Original](25.03/2015/ecb_decode.py)
-   	- [Standalone](25.03/2015/ecb_decode_standalone.py)
+   	- [Original](25.03.2015/ecb_decode.py)
+   	- [Standalone](25.03.2015/ecb_decode_standalone.py)
 
 ####Simple clients:
    1. [ECB Shuffle Client](25.03.2015/ecb_shuffle_base.py)
