@@ -4,9 +4,9 @@ service ecb_shuffle
     socket_type = stream
     protocol    = tcp
     wait        = no
-    user        = malware
+    user        = staszickrypto
     bind        = 0.0.0.0
-    server      = /home/malware/ecb_shuffle/server.py
+    server      = /home/staszickrypto/ecb_shuffle/server.py
     type        = UNLISTED
     port        = 9999
 }
@@ -17,9 +17,9 @@ service ecb_decode
     socket_type = stream
     protocol    = tcp
     wait        = no
-    user        = malware
+    user        = staszickrypto
     bind        = 0.0.0.0
-    server      = /home/malware/ecb_decode/server.py
+    server      = /home/staszickrypto/ecb_decode/server.py
     type        = UNLISTED
     port        = 8888
 }
