@@ -6,7 +6,7 @@ from Crypto.Cipher import AES
 import os, json
 from sys import stdin, stdout
 
-os.chdir("/home/malware/ecb_shuffle")
+os.chdir("/home/staszickrypto/ecb_shuffle")
 
 stdout = os.fdopen(stdout.fileno(), 'w', 0)
 key = open("/dev/urandom", "rb").read(16)

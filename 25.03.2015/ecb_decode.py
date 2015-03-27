@@ -6,7 +6,7 @@ from Crypto.Cipher import AES
 import os
 from sys import stdin, stdout
 
-os.chdir("/home/malware/ecb_decode")
+os.chdir("/home/staszickrypto/ecb_decode")
 
 welcome_message = """
 Hi, this is our new simple encryption service.
