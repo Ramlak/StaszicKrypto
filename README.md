@@ -1,6 +1,6 @@
 This is a repository for Staszic cryptography course.
 
-Now you can reach all challenges at [kalmarweb.pl](kalmarweb.pl)
+Now you can reach all challenges at [kalmarweb.pl](http://www.kalmarweb.pl)
 
 ##25.03.2015
 
