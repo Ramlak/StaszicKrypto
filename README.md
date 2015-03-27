@@ -1,5 +1,7 @@
 This is a repository for Staszic cryptography course.
 
+Now you can reach all challenges at [kalmarweb.pl](kalmarweb.pl)
+
 ##25.03.2015
 
 We will try to attack AES ECB encryption mode. <br>
