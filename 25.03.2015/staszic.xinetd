@@ -27,5 +27,5 @@ service ecb_decode
     log_on_success  =   HOST
     log_on_failure  =   HOST
     type            =   UNLISTED
-    port            =   9999
+    port            =   8888
 }
