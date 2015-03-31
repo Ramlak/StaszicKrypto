@@ -30,5 +30,5 @@ You will also need [PyCrypto](https://www.dlitz.net/software/pycrypto/) library
 ####Running at home:
 If you want to run it on your machine you have 3 options:
    1. Use xinetd as I did - Linux required
-   2. Use server-side files described as standalone. You can run it anywhere.
+   2. Use server-side files described as standalone. You can run them anywhere.
    3. Use [www.kalmarweb.pl](http://www.kalmarweb.pl)
